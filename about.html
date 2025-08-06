@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about BadReason.com - our mission to promote critical thinking and help people recognize logical fallacies in everyday arguments.">
+  <title>About BadReason.com | Promoting Critical Thinking</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Merriweather:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600|Open+Sans:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    /* About Page Specific Styles */
+    .about-hero {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 8rem 0 4rem;
+      text-align: center;
+    }
+    
+    .about-hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+    }
+    
+    .about-hero p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.2rem;
+      color: var(--text-color);
+      opacity: 0.9;
+    }
+    
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    
+    .about-section {
+      margin-bottom: 4rem;
+    }
+    
+    .about-section h2 {
+      color: var(--accent-teal);
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      position: relative;
+      padding-bottom: 0.8rem;
+    }
+    
+    .about-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent-red);
+    }
+    
+    .about-section p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      color: #444;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .value-card {
+      background: white;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      text-align: center;
+    }
+    
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .value-icon {
+      font-size: 2.5rem;
+      color: var(--accent-teal);
+      margin-bottom: 1.5rem;
+    }
+    
+    .value-card h3 {
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+    
+    .team-section {
+      background-color: #f9f9f9;
+      padding: 4rem 1.5rem;
+      margin: 4rem 0;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .team-member {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .team-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .team-info {
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    .team-info h3 {
+      margin-bottom: 0.5rem;
+      color: var(--text-color);
+    }
+    
+    .team-role {
+      color: var(--accent-teal);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .team-bio {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #f0f0f0;
+      color: var(--text-color);
+      transition: var(--transition);
+    }
+    
+    .social-link:hover {
+      background-color: var(--accent-teal);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .cta-section {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background: linear-gradient(135deg, var(--accent-teal) 0%, #6b8b8a 100%);
+      color: white;
+      border-radius: var(--border-radius);
+      margin: 4rem 0;
+    }
+    
+    .cta-section h2 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+    }
+    
+    .cta-section p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .cta-btn {
+      display: inline-block;
+      background-color: white;
+      color: var(--accent-teal);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cta-btn:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      color: var(--accent-teal);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .about-hero {
+        padding: 6rem 1.5rem 3rem;
+      }
+      
+      .about-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .about-hero p {
+        font-size: 1.1rem;
+      }
+      
+      .about-section h2 {
+        font-size: 1.8rem;
+      }
+      
+      .values-grid, .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .about-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .cta-section h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">BadReason.com</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fallacies.html">Fallacy Library</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <header class="about-hero">
+    <div class="container">
+      <h1>About BadReason.com</h1>
+      <p>Empowering critical thinking through education about logical fallacies and flawed reasoning.</p>
+    </div>
+  </header>
+  
+  <main class="about-content">
+    <section class="about-section">
+      <h2>Our Mission</h2>
+      <p>At BadReason.com, we believe that clear thinking is the foundation of a better society. Our mission is to help people recognize, understand, and avoid logical fallacies and flawed reasoning in everyday arguments, media, and public discourse.</p>
+      <p>In an age of information overload and polarized debates, the ability to think critically and spot weak arguments is more important than ever. We're here to provide accessible, engaging, and practical resources to help you navigate complex issues with clarity and confidence.</p>
+    </section>
+    
+    <section class="about-section">
+      <h2>Why Logical Fallacies Matter</h2>
+      <p>Logical fallacies are errors in reasoning that undermine the logic of an argument. They can be either formal or informal, but they all share the common trait of making an argument unsound. Fallacies are often used, either intentionally or unintentionally, to manipulate opinions, sell products, or win arguments regardless of the truth.</p>
+      <p>By learning to identify these fallacies, you can:</p>
+      
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Think More Clearly</h3>
+          <p>Improve your own reasoning and avoid common pitfalls in your thinking and arguments.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Resist Manipulation</h3>
+          <p>Recognize when others are using flawed reasoning to persuade or mislead you.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3>Engage Better</h3>
+          <p>Participate in more productive and meaningful discussions and debates.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="about-section">
+      <h2>Our Approach</h2>
+      <p>We take a practical, example-driven approach to teaching about logical fallacies. Each fallacy in our library includes:</p>
+      <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+        <li style="margin-bottom: 0.8rem;"><strong>Clear Definitions</strong> - Understand exactly what each fallacy is and how it works.</li>
+        <li style="margin-bottom: 0.8rem;"><strong>Real-World Examples</strong> - See how fallacies appear in everyday conversations, media, and politics.</li>
+        <li style="margin-bottom: 0.8rem;"><strong>Why It's Flawed</strong> - Learn why the reasoning is problematic and how it can mislead.</li>
+        <li style="margin-bottom: 0.8rem;"><strong>How to Spot It</strong> - Develop the skills to identify fallacies when you encounter them.</li>
+        <li><strong>How to Avoid It</strong> - Get practical tips for avoiding these fallacies in your own reasoning and arguments.</li>
+      </ul>
+      <p>Our goal is to make the study of logical fallacies accessible to everyone, regardless of their background in philosophy or critical thinking.</p>
+    </section>
+    
+    
+    <section class="about-section">
+      <h2>Our Commitment</h2>
+      <p>At BadReason.com, we are committed to:</p>
+      <ul style="margin: 1.5rem 0; padding-left: 1.5rem;">
+        <li style="margin-bottom: 0.8rem;"><strong>Accuracy</strong> - Providing well-researched, accurate information about logical fallacies and critical thinking.</li>
+        <li style="margin-bottom: 0.8rem;"><strong>Accessibility</strong> - Making complex concepts understandable to everyone, regardless of their background.</li>
+        <li style="margin-bottom: 0.8rem;"><strong>Objectivity</strong> - Presenting information in a neutral, non-partisan manner.</li>
+        <li><strong>Continuous Improvement</strong> - Regularly updating and expanding our content based on user feedback and new developments in the field.</li>
+      </ul>
+      <p>We believe that by promoting better reasoning skills, we can contribute to a more informed, rational, and constructive public discourse.</p>
+    </section>
+    
+    <div class="cta-section">
+      <h2>Start Improving Your Critical Thinking Today</h2>
+      <p>Explore our growing library of logical fallacies and take the first step toward becoming a more effective thinker and communicator.</p>
+      <a href="fallacies.html" class="cta-btn">Browse Fallacies</a>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="container footer-content">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="fallacies.html">Fallacy Library</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="did-you-know" id="did-you-know">
+        <!-- JS will inject rotating facts here -->
+      </div>
+      <div class="copyright">&copy; 2025 BadReason.com. All rights reserved.</div>
+    </div>
+  </footer>
+  
+  <script>
+    // Setup mobile menu
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      displayRandomFact();
+    });
+    
+    // Display a random fun fact in the footer
+    function displayRandomFact() {
+      const didYouKnowContainer = document.getElementById('did-you-know');
+      if (!didYouKnowContainer) return;
+      
+      const funFacts = [
+        "The term 'straw man' comes from the idea of setting up a straw man that's easy to knock down, similar to misrepresenting someone's argument to make it easier to attack.",
+        "Ad hominem is Latin for 'to the person' and has been used as a logical fallacy since at least the 16th century.",
+        "The 'bandwagon fallacy' gets its name from the phrase 'jump on the bandwagon,' which originated in 19th-century American politics.",
+        "The 'red herring' fallacy is named after the practice of using strong-smelling fish to throw hunting dogs off a trail.",
+        "The 'appeal to authority' was first described by Aristotle in his work 'Rhetoric' over 2,300 years ago.",
+        "The 'false dilemma' is also known as the 'either/or' or 'black and white' fallacy.",
+        "The 'slippery slope' argument is only fallacious when the predicted outcome isn't necessarily likely to occur.",
+        "The 'hasty generalization' is sometimes called 'jumping to conclusions' or 'insufficient sample' fallacy.",
+        "The 'post hoc' fallacy gets its name from the Latin phrase 'post hoc, ergo propter hoc,' meaning 'after this, therefore because of this.'",
+        "The 'begging the question' fallacy is also known as 'circular reasoning' or 'petitio principii' in Latin."
+      ];
+      
+      const randomIndex = Math.floor(Math.random() * funFacts.length);
+      const fact = funFacts[randomIndex];
+      
+      const html = `
+        <div class="fact-content">
+          <strong>Did you know?</strong> ${fact}
+        </div>
+      `;
+      
+      didYouKnowContainer.innerHTML = html;
+      
+      // Change fact every 10 seconds
+      setInterval(() => {
+        displayRandomFact();
+      }, 10000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about the Poisoning the Well fallacy - what it is, examples, and how to recognize and avoid this common error in reasoning.">
+  <title>Poisoning the Well Fallacy | BadReason.com</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Merriweather:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600|Open+Sans:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    /* Fallacy Template Specific Styles */
+    .fallacy-header {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 8rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .fallacy-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI0I4NTA0MiIgZmlsbC1vcGFjaXR5PSIwLjA1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+') center/cover;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .fallacy-header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+    
+    .fallacy-category {
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      background-color: var(--accent-red);
+      color: white;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    
+    .fallacy-title {
+      font-size: 3rem;
+      margin: 1rem 0;
+      color: var(--text-color);
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .fallacy-summary {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: var(--text-color);
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+    
+    .fallacy-content {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      gap: 3rem;
+    }
+    
+    .main-content {
+      flex: 2;
+    }
+    
+    .sidebar {
+      flex: 1;
+      max-width: 350px;
+    }
+    
+    .section {
+      margin-bottom: 3rem;
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .section h2 {
+      color: var(--accent-red);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .section h2 i {
+      color: var(--accent-teal);
+    }
+    
+    .section p, .section ul, .section ol {
+      line-height: 1.7;
+      color: var(--text-color);
+      margin-bottom: 1.5rem;
+    }
+    
+    .section ul, .section ol {
+      padding-left: 1.5rem;
+    }
+    
+    .section li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .example {
+      background-color: #f8f9fa;
+      border-left: 4px solid var(--accent-red);
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .example p:first-child {
+      margin-top: 0;
+      font-weight: 600;
+      color: var(--accent-red);
+    }
+    
+    .example p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .related-fallacies {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .related-fallacies h3 {
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+      color: var(--accent-red);
+      font-size: 1.4rem;
+    }
+    
+    .related-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .related-list li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .related-list a {
+      display: flex;
+      align-items: center;
+      color: var(--text-color);
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+    
+    .related-list a:hover {
+      background-color: #f8f9fa;
+      color: var(--accent-red);
+    }
+    
+    .related-list i {
+      margin-right: 0.75rem;
+      color: var(--accent-teal);
+      font-size: 0.8rem;
+    }
+    
+    .share-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .share-btn i {
+      margin-right: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .share-twitter {
+      background-color: #1DA1F2;
+    }
+    
+    .share-facebook {
+      background-color: #4267B2;
+    }
+    
+    .share-linkedin {
+      background-color: #0077B5;
+    }
+    
+    .fact-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-left: 4px solid var(--accent-red);
+    }
+    
+    .fact-box h3 {
+      margin-top: 0;
+      color: var(--accent-red);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .fact-box h3 i {
+      color: var(--accent-red);
+    }
+    
+    .fact-box p {
+      margin-bottom: 0;
+      font-style: italic;
+      color: var(--text-color);
+    }
+    
+    @media (max-width: 992px) {
+      .fallacy-content {
+        flex-direction: column;
+      }
+      
+      .sidebar {
+        max-width: 100%;
+      }
+      
+      .fallacy-title {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .fallacy-header {
+        padding: 6rem 0 3rem;
+      }
+      
+      .fallacy-title {
+        font-size: 2rem;
+      }
+      
+      .fallacy-summary {
+        font-size: 1.1rem;
+      }
+      
+      .section {
+        padding: 1.5rem;
+      }
+      
+      .share-buttons {
+        flex-direction: column;
+      }
+      
+      .share-btn {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="../index.html" class="logo">BadReason.com</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../fallacies.html" class="active">Fallacy Library</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  
+  <header class="fallacy-header">
+    <div class="fallacy-header-content">
+      <span class="fallacy-category">Informal Fallacy</span>
+      <h1 class="fallacy-title">Poisoning the Well</h1>
+      <p class="fallacy-summary">Presenting negative information about a person before they speak to discredit their argument in advance.</p>
+    </div>
+  </header>
+  
+  <div class="fallacy-content">
+    <main class="main-content">
+      <section class="section" id="definition">
+        <h2><i class="fas fa-book"></i>Definition</h2>
+        <div id="fallacy-definition">
+          <p>Poisoning the well is a rhetorical device where negative information about a target is presented with the intention of discrediting everything that the target person is about to say. It works by creating a negative bias in the audience before the target even speaks, making it more likely that their arguments will be dismissed regardless of their actual merit.</p>
+        </div>
+      </section>
+      
+      <section class="section" id="examples">
+        <h2><i class="fas fa-lightbulb"></i>Examples</h2>
+        <div class="example">
+          <p>Example 1: Political Debate</p>
+          <p>"Before you listen to my opponent's speech about healthcare reform, remember that he was once fired for embezzlement."</p>
+        </div>
+        
+        <div class="example">
+          <p>Example 2: Workplace Discussion</p>
+          <p>"I know Sarah is going to present her proposal now, but just so you know, her last two projects were complete failures that cost the company thousands."</p>
+        </div>
+      </section>
+      
+      <section class="section" id="why-flawed">
+        <h2><i class="fas fa-times-circle"></i>Why It's Flawed</h2>
+        <p>The poisoning the well fallacy is problematic because it:</p>
+        <ul>
+          <li>Attacks the person rather than their argument (ad hominem)</li>
+          <li>Creates bias before the person has a chance to present their case</li>
+          <li>Encourages dismissal of arguments based on irrelevant information</li>
+          <li>Undermines fair and rational discussion</li>
+          <li>Can be used to manipulate audiences and suppress opposing views</li>
+        </ul>
+      </section>
+      
+      <section class="section" id="spot">
+        <h2><i class="fas fa-search"></i>How to Spot It</h2>
+        <p>Look for these signs of poisoning the well:</p>
+        <ol>
+          <li>Negative information is presented about someone before they speak</li>
+          <li>The information is often irrelevant to the current discussion</li>
+          <li>The intent seems to be creating a negative impression in advance</li>
+          <li>The audience is encouraged to be skeptical before hearing the argument</li>
+          <li>The focus shifts from the argument's merits to the speaker's character</li>
+        </ol>
+      </section>
+      
+      <section class="section" id="avoid">
+        <h2><i class="fas fa-shield-alt"></i>How to Avoid It</h2>
+        <p>To avoid using or being misled by poisoning the well:</p>
+        <ul>
+          <li>Focus on arguments, not the person making them</li>
+          <li>Be aware of your own biases when evaluating information</li>
+          <li>Give people a fair chance to present their case before judging</li>
+          <li>Question the relevance of negative information about a speaker</li>
+          <li>If you're presenting information, do so fairly and without unnecessary bias</li>
+        </ul>
+      </section>
+      
+      <div class="share-buttons">
+        <a href="#" class="share-btn share-twitter">
+          <i class="fab fa-twitter"></i> Share on Twitter
+        </a>
+        <a href="#" class="share-btn share-facebook">
+          <i class="fab fa-facebook-f"></i> Share on Facebook
+        </a>
+        <a href="#" class="share-btn share-linkedin">
+          <i class="fab fa-linkedin-in"></i> Share on LinkedIn
+        </a>
+      </div>
+    </main>
+    
+    <aside class="sidebar">
+      <div class="related-fallacies">
+        <h3>Related Fallacies</h3>
+        <ul class="related-list">
+          <li>
+            <a href="fallacy-ad-hominem.html">
+              <i class="fas fa-arrow-right"></i> Ad Hominem
+            </a>
+          </li>
+          <li>
+            <a href="fallacy-genetic.html">
+              <i class="fas fa-arrow-right"></i> Genetic Fallacy
+            </a>
+          </li>
+          <li>
+            <a href="fallacy-tu-quoque.html">
+              <i class="fas fa-arrow-right"></i> Tu Quoque
+            </a>
+          </li>
+          <li>
+            <a href="fallacy-straw-man.html">
+              <i class="fas fa-arrow-right"></i> Straw Man
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="fact-box">
+        <h3><i class="fas fa-lightbulb"></i> Did You Know?</h3>
+        <p id="fun-fact">The term "poisoning the well" originates from the practice of literally poisoning water supplies to make them undrinkable. In rhetoric, it refers to making a source of information untrustworthy before it can be used.</p>
+      </div>
+    </aside>
+  </div>
+  
+  <footer class="footer">
+    <div class="container footer-content">
+      <nav class="footer-nav">
+        <a href="../index.html">Home</a>
+        <a href="../fallacies.html">Fallacy Library</a>
+        <a href="../about.html">About</a>
+        <a href="#" id="back-to-top">Back to Top</a>
+      </nav>
+      <div class="footer-legal">
+        <p>&copy; 2023 BadReason.com - All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Setup mobile menu toggle
+    function setupMobileMenu() {
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          menuBtn.classList.toggle('active');
+          menuBtn.setAttribute('aria-expanded', 
+            menuBtn.classList.contains('active'));
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.nav-content') && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuBtn.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    }
+    
+    // Display a random fun fact in the footer
+    function displayRandomFact() {
+      const facts = [
+        "The term 'poisoning the well' was first used in its rhetorical sense by John Henry Newman in the 19th century.",
+        "This fallacy is particularly common in political campaigns and smear tactics.",
+        "Poisoning the well is considered a type of ad hominem attack, specifically a circumstantial ad hominem.",
+        "The technique is often used in propaganda to discredit opponents before they can speak.",
+        "Recognizing this fallacy is crucial for maintaining fair and rational discussions in professional and personal settings."
+      ];
+      
+      const factElement = document.getElementById('fun-fact');
+      if (factElement) {
+        const randomFact = facts[Math.floor(Math.random() * facts.length)];
+        factElement.textContent = randomFact;
+        
+        // Change fact every 10 seconds
+        setInterval(() => {
+          const newFact = facts[Math.floor(Math.random() * facts.length)];
+          if (newFact !== factElement.textContent) {
+            factElement.textContent = newFact;
+          }
+        }, 10000);
+      }
+    }
+    
+    // Setup share buttons
+    document.addEventListener('DOMContentLoaded', () => {
+      const title = document.title;
+      const url = window.location.href;
+      
+      // Set up Twitter share button
+      const twitterBtn = document.querySelector('.share-twitter');
+      if (twitterBtn) {
+        twitterBtn.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+        twitterBtn.target = '_blank';
+      }
+      
+      // Set up Facebook share button
+      const facebookBtn = document.querySelector('.share-facebook');
+      if (facebookBtn) {
+        facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        facebookBtn.target = '_blank';
+      }
+      
+      // Set up LinkedIn share button
+      const linkedinBtn = document.querySelector('.share-linkedin');
+      if (linkedinBtn) {
+        linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+        linkedinBtn.target = '_blank';
+      }
+      
+      // Back to top button
+      const backToTop = document.getElementById('back-to-top');
+      if (backToTop) {
+        backToTop.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+      
+      // Initialize components
+      setupMobileMenu();
+      displayRandomFact();
+    });
+    
+    // Add animation on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    }
+    
+    // Initialize scroll animations
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
+</body>
+</html>

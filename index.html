@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A library of flawed logic and fallacy education. Learn to spot bad reasoning and improve your critical thinking.">
+  <title>BadReason.com – Logical Fallacies & Flawed Arguments</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Merriweather:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600|Open+Sans:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="favicon.ico">
+  <style>
+    /* Hero Section */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      background: linear-gradient(135deg, rgba(245, 245, 247, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), 
+                  url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UHJlc2VydmU9InNsaWNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiM3OTg4ODciIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+      line-height: 1.1;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .hero .subtitle {
+      font-size: 1.5rem;
+      color: var(--accent-teal);
+      margin-bottom: 2.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s ease-out 0.2s both;
+      font-weight: 500;
+    }
+    
+    /* Features Section */
+    .features {
+      padding: 6rem 0;
+      background-color: var(--white);
+    }
+    
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .feature-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      border: 1px solid #eee;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--accent-teal);
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+    
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+    
+    .feature-card p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .learn-more {
+      display: inline-flex;
+      align-items: center;
+      color: var(--accent-teal);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .learn-more i {
+      margin-left: 0.5rem;
+      transition: var(--transition);
+    }
+    
+    .learn-more:hover {
+      color: var(--accent-red);
+    }
+    
+    .learn-more:hover i {
+      transform: translateX(3px);
+    }
+    
+    /* Fallacy of the Day */
+    .fallacy-day {
+      padding: 6rem 0;
+      background-color: #f9f9f9;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .fallacy-day::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI0I4NTA0MiIgZmlsbC1vcGFjaXR5PSIwLjA1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+') center/cover;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .fallacy-day-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .fallacy-day-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .fallacy-day-header h2 {
+      font-size: 2.5rem;
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+    
+    .fallacy-day-header p {
+      color: #666;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .fallacy-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      display: flex;
+      max-width: 900px;
+      margin: 0 auto;
+      transition: var(--transition);
+    }
+    
+    .fallacy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .fallacy-card-content {
+      padding: 2.5rem;
+      flex: 1;
+    }
+    
+    .fallacy-category {
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      background-color: var(--accent-red);
+      color: white;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .fallacy-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+    
+    .fallacy-card p {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .fallacy-card .example {
+      background-color: #f8f9fa;
+      border-left: 4px solid var(--accent-teal);
+      padding: 1.25rem;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      margin: 1.5rem 0;
+      font-style: italic;
+    }
+    
+    .fallacy-card .example strong {
+      color: var(--accent-teal);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .fallacy-card-illustration {
+      flex: 0 0 300px;
+      background-color: #f0f0f0;
+      background-position: center;
+      background-size: cover;
+      display: none; /* Hidden on mobile */
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 6rem 1.5rem;
+      background: linear-gradient(135deg, var(--accent-teal) 0%, #6b8b8a 100%);
+      color: white;
+      text-align: center;
+    }
+    
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .cta-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+    
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    
+    .btn-primary {
+      background-color: white;
+      color: var(--accent-teal);
+    }
+    
+    .btn-primary:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+    
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+      
+      .fallacy-card {
+        flex-direction: column;
+      }
+      
+      .fallacy-card-illustration {
+        display: block;
+        height: 200px;
+        flex: 0 0 auto;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        padding: 5rem 1.5rem 3rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      
+      .hero .subtitle {
+        font-size: 1.3rem;
+      }
+      
+      .section-header h2 {
+        font-size: 2rem;
+      }
+      
+      .fallacy-day-header h2 {
+        font-size: 2rem;
+      }
+      
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+      
+      .btn-group {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero .subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .section-header h2, 
+      .fallacy-day-header h2,
+      .cta-content h2 {
+        font-size: 1.8rem;
+      }
+      
+      .fallacy-card-content {
+        padding: 1.5rem;
+      }
+      
+      .fallacy-card h3 {
+        font-size: 1.5rem;
+      }
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">BadReason.com</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="fallacies.html">Fallacy Library</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Think Clearly, Reason Better</h1>
+      <p class="subtitle">Learn to identify and avoid common logical fallacies that undermine critical thinking and productive discussions.</p>
+      <div class="cta-buttons">
+        <a href="fallacies.html" class="cta-btn">Explore Fallacies</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="section-header">
+      <h2>Why Study Logical Fallacies?</h2>
+      <p>Understanding logical fallacies helps you think more clearly, make better arguments, and recognize when others are using flawed reasoning.</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3>Sharpen Your Mind</h3>
+        <p>Develop critical thinking skills that help you analyze arguments and spot weak reasoning in everyday discussions, media, and decision-making.</p>
+        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">
+          <i class="fas fa-comments"></i>
+        </div>
+        <h3>Improve Discussions</h3>
+        <p>Engage in more productive conversations by identifying and avoiding common pitfalls in reasoning that can derail meaningful dialogue.</p>
+        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Resist Manipulation</h3>
+        <p>Recognize when others use flawed arguments to persuade or manipulate, and make decisions based on sound reasoning rather than rhetoric.</p>
+        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fallacy of the Day -->
+  <section class="fallacy-day" id="fallacy-day">
+    <div class="fallacy-day-content">
+      <div class="fallacy-day-header">
+        <h2>Fallacy of the Day</h2>
+        <p>Each day we highlight a different logical fallacy to help you recognize and understand common errors in reasoning.</p>
+      </div>
+      
+      <div class="fallacy-card">
+        <div class="fallacy-card-content">
+          <span class="fallacy-category" id="fallacy-category">Informal Fallacy</span>
+          <h3 id="fallacy-name">Straw Man</h3>
+          <p id="fallacy-description">Misrepresenting someone's argument to make it easier to attack by exaggerating, misrepresenting, or just completely fabricating it.</p>
+          
+          <div class="example">
+            <strong>Example:</strong>
+            <p id="fallacy-example">Person A: We should give more funding to schools. Person B: So you think we should waste money on frivolous programs instead of fixing roads? That's irresponsible!</p>
+          </div>
+          
+          <a href="fallacy-straw-man.html" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="fallacy-card-illustration" style="background-image: url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');">
+          <!-- Fallacy illustration -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Improve Your Critical Thinking?</h2>
+      <p>Explore our comprehensive library of logical fallacies, complete with definitions, examples, and tips for recognizing and avoiding them in your own reasoning.</p>
+      <div class="btn-group">
+        <a href="fallacies.html" class="btn btn-primary">Browse All Fallacies</a>
+        <a href="about.html" class="btn btn-outline">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="fallacies.html">Fallacy Library</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="did-you-know" id="did-you-know">
+        <!-- JS will inject rotating facts here -->
+      </div>
+      <div class="copyright">&copy; 2025 BadReason.com. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Fallacy data - in a real app, this would come from an API or database
+    const fallacies = [
+      {
+        id: 'straw-man',
+        name: 'Straw Man',
+        category: 'Informal Fallacy',
+        description: 'Misrepresenting someone\'s argument to make it easier to attack by exaggerating, misrepresenting, or just completely fabricating it.',
+        example: 'Person A: We should give more funding to schools. Person B: So you think we should waste money on frivolous programs instead of fixing roads? That\'s irresponsible!'
+      },
+      {
+        id: 'ad-hominem',
+        name: 'Ad Hominem',
+        category: 'Informal Fallacy',
+        description: 'Attacking the person making the argument rather than the argument itself.',
+        example: 'You can\'t trust John\'s opinion on climate change because he\'s not a scientist.'
+      },
+      {
+        id: 'false-dilemma',
+        name: 'False Dilemma',
+        category: 'Logical Fallacy',
+        description: 'Presenting two alternative states as the only possibilities, when in fact more possibilities exist.',
+        example: 'You\'re either with us, or you\'re against us.'
+      },
+      {
+        id: 'slippery-slope',
+        name: 'Slippery Slope',
+        category: 'Logical Fallacy',
+        description: 'Arguing that a relatively small first step leads to a chain of related events culminating in some significant impact.',
+        example: 'If we allow students to redo this test, soon they\'ll want to redo every assignment, and the entire education system will collapse!'
+      },
+      {
+        id: 'appeal-to-authority',
+        name: 'Appeal to Authority',
+        category: 'Informal Fallacy',
+        description: 'Using an authority figure as evidence when they are not a reliable source on the topic.',
+        example: 'A famous actor says this diet pill works, so it must be effective.'
+      }
+    ];
+
+    // DOM Elements
+    const fallacyDayContainer = document.getElementById('fallacy-day');
+    const fallacyName = document.getElementById('fallacy-name');
+    const fallacyCategory = document.getElementById('fallacy-category');
+    const fallacyDescription = document.getElementById('fallacy-description');
+    const fallacyExample = document.getElementById('fallacy-example');
+    const didYouKnowContainer = document.getElementById('did-you-know');
+
+    // Initialize the page when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      displayFallacyOfTheDay();
+      displayRandomFact();
+      setupMobileMenu();
+      setupScrollAnimations();
+    });
+
+    // Display a random fallacy as Fallacy of the Day
+    function displayFallacyOfTheDay() {
+      if (!fallacyDayContainer) return;
+      
+      // Get a random fallacy
+      const randomIndex = Math.floor(Math.random() * fallacies.length);
+      const fallacy = fallacies[randomIndex];
+      
+      // Update the UI
+      if (fallacyName) fallacyName.textContent = fallacy.name;
+      if (fallacyCategory) fallacyCategory.textContent = fallacy.category;
+      if (fallacyDescription) fallacyDescription.textContent = fallacy.description;
+      if (fallacyExample) {
+        const exampleContainer = fallacyExample.parentElement;
+        if (fallacy.example) {
+          exampleContainer.style.display = 'block';
+          fallacyExample.textContent = fallacy.example;
+        } else {
+          exampleContainer.style.display = 'none';
+        }
+      }
+      
+      // Update the "Learn More" link
+      const learnMoreLink = document.querySelector('.fallacy-card-content .btn');
+      if (learnMoreLink) {
+        learnMoreLink.href = `fallacy-${fallacy.id}.html`;
+      }
+      
+      // Update the illustration (in a real app, you might have different images for each fallacy)
+      const illustration = document.querySelector('.fallacy-card-illustration');
+      if (illustration) {
+        // You could set different images based on the fallacy ID
+        // illustration.style.backgroundImage = `url('path/to/${fallacy.id}-image.jpg')`;
+      }
+    }
+
+    // Display a random fun fact in the footer
+    function displayRandomFact() {
+      if (!didYouKnowContainer) return;
+      
+      const funFacts = [
+        "The term 'straw man' comes from the idea of setting up a straw man that's easy to knock down, similar to misrepresenting someone's argument to make it easier to attack.",
+        "Ad hominem is Latin for 'to the person' and has been used as a logical fallacy since at least the 16th century.",
+        "The 'bandwagon fallacy' gets its name from the phrase 'jump on the bandwagon,' which originated in 19th-century American politics.",
+        "The 'red herring' fallacy is named after the practice of using strong-smelling fish to throw hunting dogs off a trail.",
+        "The 'appeal to authority' was first described by Aristotle in his work 'Rhetoric' over 2,300 years ago.",
+        "The 'false dilemma' is also known as the 'either/or' or 'black and white' fallacy.",
+        "The 'slippery slope' argument is only fallacious when the predicted outcome isn't necessarily likely to occur.",
+        "The 'hasty generalization' is sometimes called 'jumping to conclusions' or 'insufficient sample' fallacy.",
+        "The 'post hoc' fallacy gets its name from the Latin phrase 'post hoc, ergo propter hoc,' meaning 'after this, therefore because of this.'",
+        "The 'begging the question' fallacy is also known as 'circular reasoning' or 'petitio principii' in Latin."
+      ];
+      
+      const randomIndex = Math.floor(Math.random() * funFacts.length);
+      const fact = funFacts[randomIndex];
+      
+      const html = `
+        <div class="fact-content">
+          <strong>Did you know?</strong> ${fact}
+        </div>
+      `;
+      
+      didYouKnowContainer.innerHTML = html;
+      
+      // Change fact every 10 seconds
+      setInterval(() => {
+        displayRandomFact();
+      }, 10000);
+    }
+
+    // Setup scroll animations
+    function setupScrollAnimations() {
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        
+        elements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+          
+          if (elementTop < windowHeight - 100) {
+            element.classList.add('visible');
+          }
+        });
+      };
+      
+      // Initial check
+      animateOnScroll();
+      
+      // Check on scroll
+      window.addEventListener('scroll', animateOnScroll);
+    }
+  </script>
+</body>
+</html>

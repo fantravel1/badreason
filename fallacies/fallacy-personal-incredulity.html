@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about the Personal Incredulity fallacy – what it is, examples, and how to recognize and avoid this common error in reasoning.">
+  <title>Personal Incredulity Fallacy | BadReason.com</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Merriweather:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600|Open+Sans:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="../favicon.ico">
+  <style>
+    /* Fallacy Template Specific Styles */
+    .fallacy-header {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 8rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .fallacy-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('../assets/illustration.svg') no-repeat center center/cover;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    .fallacy-header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+    .fallacy-category {
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      background-color: var(--accent-red);
+      color: white;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+    }
+    .fallacy-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+      line-height: 1.2;
+    }
+    .fallacy-summary {
+      font-size: 1.25rem;
+      color: #4a5568;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+    .fallacy-content {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      gap: 3rem;
+    }
+    .main-content {
+      flex: 2;
+    }
+    .sidebar {
+      flex: 1;
+      max-width: 320px;
+    }
+    .section {
+      margin-bottom: 3rem;
+      scroll-margin-top: 100px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent-red);
+      font-family: 'Playfair Display', serif;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section ul, .section ol {
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+    }
+    .section li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+    .example {
+      background-color: #f8f9fa;
+      border-left: 4px solid var(--accent-teal);
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .example p:first-child {
+      margin-top: 0;
+      font-weight: 600;
+      color: var(--accent-red);
+    }
+    .example p:last-child {
+      margin-bottom: 0;
+    }
+    .related-fallacies {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .related-fallacies h3 {
+      margin-top: 0;
+      color: var(--accent-red);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    .related-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .related-list li {
+      margin-bottom: 0.75rem;
+    }
+    .related-list a {
+      display: flex;
+      align-items: center;
+      color: var(--text-color);
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+    .related-list a:hover {
+      background-color: #f8f9fa;
+      color: var(--accent-red);
+    }
+    .related-list i {
+      margin-right: 0.75rem;
+      color: var(--accent-teal);
+      font-size: 0.8rem;
+    }
+    .fact-box {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-left: 4px solid var(--accent-teal);
+    }
+    .fact-box h3 {
+      margin-top: 0;
+      color: var(--accent-red);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .fact-box h3 i {
+      color: var(--accent-teal);
+    }
+    .fact-box p {
+      margin-bottom: 0;
+      font-style: italic;
+      color: var(--text-color);
+    }
+    .share-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .share-btn i {
+      margin-right: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .share-twitter {
+      background-color: #1DA1F2;
+    }
+    .share-facebook {
+      background-color: #4267B2;
+    }
+    .share-linkedin {
+      background-color: #0077B5;
+    }
+    @media (max-width: 992px) {
+      .fallacy-content {
+        flex-direction: column;
+      }
+      .sidebar {
+        max-width: 100%;
+      }
+      .fallacy-title {
+        font-size: 2.5rem;
+      }
+    }
+    @media (max-width: 768px) {
+      .fallacy-header {
+        padding: 6rem 0 3rem;
+      }
+      .fallacy-title {
+        font-size: 2rem;
+      }
+      .fallacy-summary {
+        font-size: 1.1rem;
+      }
+      .section {
+        padding: 1.5rem;
+      }
+      .share-buttons {
+        flex-direction: column;
+      }
+      .share-btn {
+        justify-content: center;
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="../index.html" class="logo">BadReason.com</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../fallacies.html" class="active">Fallacy Library</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <header class="fallacy-header">
+    <div class="fallacy-header-content">
+      <span class="fallacy-category">Cognitive Bias</span>
+      <h1 class="fallacy-title">Personal Incredulity</h1>
+      <p class="fallacy-summary">Dismissing a claim because it seems unbelievable or difficult to understand.</p>
+    </div>
+  </header>
+  <div class="fallacy-content">
+    <main class="main-content">
+      <section class="section" id="definition">
+        <h2><i class="fas fa-book"></i>Definition</h2>
+        <div id="fallacy-definition">
+          <p>Personal incredulity is a logical fallacy where someone dismisses a claim or argument simply because they find it difficult to understand or believe. The fallacy assumes that if something is hard to grasp, it must not be true.</p>
+        </div>
+      </section>
+      <section class="section" id="examples">
+        <h2><i class="fas fa-lightbulb"></i>Examples</h2>
+        <div class="example">
+          <p>Example 1: Science Denial</p>
+          <p>"I can’t believe how evolution could create such complex life, so it must be false."</p>
+        </div>
+        <div class="example">
+          <p>Example 2: Technology</p>
+          <p>"Quantum mechanics just doesn’t make sense to me, so I doubt it’s real science."</p>
+        </div>
+        <div class="example">
+          <p>Example 3: Everyday Life</p>
+          <p>"It’s hard to imagine how planes stay in the air. I don’t think it’s possible."</p>
+        </div>
+      </section>
+      <section class="section" id="why-flawed">
+        <h2><i class="fas fa-times-circle"></i>Why It's Flawed</h2>
+        <p>Personal incredulity is flawed because:</p>
+        <ul>
+          <li>Difficulty understanding something does not make it false</li>
+          <li>It relies on ignorance or lack of imagination rather than evidence</li>
+          <li>Complex or counterintuitive truths are common in science and life</li>
+          <li>It discourages open-minded inquiry</li>
+        </ul>
+        <p>Arguments should be judged by evidence and logic, not by how easy they are to understand.</p>
+      </section>
+      <section class="section" id="spot">
+        <h2><i class="fas fa-search"></i>How to Spot It</h2>
+        <p>Look for these signs of personal incredulity:</p>
+        <ol>
+          <li>The argument is dismissed because it "doesn’t make sense" to someone</li>
+          <li>The speaker appeals to their own ignorance or confusion</li>
+          <li>There is little or no engagement with the actual evidence</li>
+          <li>Complex ideas are waved away as "impossible" or "absurd"</li>
+        </ol>
+        <p>Example of spotting it: If someone says, "I just can’t believe that’s true," ask if there is actual evidence against the claim.</p>
+      </section>
+      <section class="section" id="avoid">
+        <h2><i class="fas fa-shield-alt"></i>How to Avoid It</h2>
+        <p>To avoid using or being misled by personal incredulity:</p>
+        <ul>
+          <li>Recognize that your understanding is not the measure of truth</li>
+          <li>Be open to learning about complex or unfamiliar topics</li>
+          <li>Seek evidence and expert opinion</li>
+          <li>Ask questions rather than dismissing what you don’t understand</li>
+        </ul>
+        <p>When evaluating a claim, focus on the evidence, not just your own intuition.</p>
+      </section>
+      <div class="share-buttons">
+        <a href="#" class="share-btn share-twitter"><i class="fab fa-twitter"></i> Share on Twitter</a>
+        <a href="#" class="share-btn share-facebook"><i class="fab fa-facebook-f"></i> Share on Facebook</a>
+        <a href="#" class="share-btn share-linkedin"><i class="fab fa-linkedin-in"></i> Share on LinkedIn</a>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <div class="related-fallacies">
+        <h3>Related Fallacies</h3>
+        <ul class="related-list">
+          <li>
+            <a href="fallacy-argument-from-ignorance.html">
+              <i class="fas fa-arrow-right"></i> Argument from Ignorance
+            </a>
+          </li>
+          <li>
+            <a href="fallacy-false-dilemma.html">
+              <i class="fas fa-arrow-right"></i> False Dilemma
+            </a>
+          </li>
+          <li>
+            <a href="fallacy-straw-man.html">
+              <i class="fas fa-arrow-right"></i> Straw Man
+            </a>
+          </li>
+          <li>
+            <a href="fallacy-appeal-to-authority.html">
+              <i class="fas fa-arrow-right"></i> Appeal to Authority
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="fact-box">
+        <h3><i class="fas fa-lightbulb"></i> Did You Know?</h3>
+        <p id="fun-fact">Personal incredulity often arises when people encounter complex or counterintuitive scientific ideas.</p>
+      </div>
+    </aside>
+  </div>
+  <footer class="footer">
+    <div class="container footer-content">
+      <nav class="footer-nav">
+        <a href="../index.html">Home</a>
+        <a href="../fallacies.html">Fallacy Library</a>
+        <a href="../about.html">About</a>
+        <a href="#" id="back-to-top">Back to Top</a>
+      </nav>
+      <div class="footer-legal">
+        <p>&copy; 2025 BadReason.com - All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Setup mobile menu toggle
+    function setupMobileMenu() {
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          menuBtn.classList.toggle('active');
+          menuBtn.setAttribute('aria-expanded', menuBtn.classList.contains('active'));
+        });
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.nav-content') && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuBtn.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    }
+    // Display a random fun fact in the sidebar
+    function displayRandomFact() {
+      const facts = [
+        "Personal incredulity often arises when people encounter complex or counterintuitive scientific ideas.",
+        "The fallacy is sometimes called the argument from incredulity.",
+        "Not understanding something does not make it false.",
+        "Science is full of counterintuitive truths that challenge our intuition.",
+        "Being open-minded helps avoid this fallacy."
+      ];
+      const factElement = document.getElementById('fun-fact');
+      if (factElement) {
+        const randomFact = facts[Math.floor(Math.random() * facts.length)];
+        factElement.textContent = randomFact;
+        setInterval(() => {
+          const newFact = facts[Math.floor(Math.random() * facts.length)];
+          if (newFact !== factElement.textContent) {
+            factElement.textContent = newFact;
+          }
+        }, 10000);
+      }
+    }
+    // Add animation on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.section, .fact-box, .related-fallacies');
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (elementTop < windowHeight - 100) {
+          element.classList.add('visible');
+        }
+      });
+    }
+    // Setup share buttons
+    document.addEventListener('DOMContentLoaded', () => {
+      const title = document.title;
+      const url = window.location.href;
+      const text = `Check out this explanation of the Personal Incredulity fallacy on BadReason.com`;
+      // Twitter
+      const twitterBtn = document.querySelector('.share-twitter');
+      if (twitterBtn) {
+        twitterBtn.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        twitterBtn.target = '_blank';
+      }
+      // Facebook
+      const facebookBtn = document.querySelector('.share-facebook');
+      if (facebookBtn) {
+        facebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        facebookBtn.target = '_blank';
+      }
+      // LinkedIn
+      const linkedinBtn = document.querySelector('.share-linkedin');
+      if (linkedinBtn) {
+        linkedinBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+        linkedinBtn.target = '_blank';
+      }
+      // Back to top button
+      const backToTop = document.getElementById('back-to-top');
+      if (backToTop) {
+        backToTop.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+      setupMobileMenu();
+      displayRandomFact();
+      animateOnScroll();
+    });
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our comprehensive library of logical fallacies. Learn to identify and understand common flaws in reasoning.">
+  <title>Fallacy Library | BadReason.com</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Merriweather:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600|Open+Sans:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    /* Fallacy Library Specific Styles */
+    .library-header {
+      text-align: center;
+      padding: 8rem 0 4rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .library-header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+    
+    .library-header p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      color: var(--text-color);
+      opacity: 0.9;
+    }
+    
+    .filters-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem auto;
+      max-width: 1000px;
+    }
+    
+    .search-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    .search-container i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-teal);
+    }
+    
+    #search-input {
+      width: 100%;
+      padding: 0.8rem 1rem 0.8rem 3rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 50px;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    
+    #search-input:focus {
+      outline: none;
+      border-color: var(--accent-teal);
+      box-shadow: 0 0 0 3px rgba(125, 157, 156, 0.2);
+    }
+    
+    .filter-btn {
+      padding: 0.5rem 1.2rem;
+      background: white;
+      border: 2px solid var(--light-gray);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      transition: var(--transition);
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+      background-color: var(--accent-teal);
+      border-color: var(--accent-teal);
+      color: white;
+    }
+    
+    .fallacies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0 6rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    
+    .fallacy-card {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .fallacy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-header {
+      padding: 1.5rem 1.5rem 0.5rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .card-category {
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      background-color: var(--accent-red);
+      color: white;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+    }
+    
+    .card-body {
+      padding: 1rem 1.5rem 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .fallacy-card h3 {
+      margin: 0 0 1rem 0;
+      font-size: 1.4rem;
+      color: var(--text-color);
+    }
+    
+    .fallacy-card p {
+      margin-bottom: 1.5rem;
+      color: #555;
+      flex-grow: 1;
+    }
+    
+    .card-footer {
+      padding: 0 1.5rem 1.5rem;
+    }
+    
+    .read-more {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--accent-teal);
+      color: white;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      text-align: center;
+      width: 100%;
+    }
+    
+    .read-more:hover {
+      background-color: var(--accent-red);
+      color: white;
+    }
+    
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 0;
+      color: #666;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .library-header {
+        padding: 6rem 1.5rem 3rem;
+      }
+      
+      .library-header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .filters-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      
+      .filter-btn {
+        width: 100%;
+        max-width: 200px;
+      }
+      
+      .fallacies-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem 1.5rem 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">BadReason.com</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fallacies.html" class="active">Fallacy Library</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <header class="library-header">
+    <div class="container">
+      <h1>Fallacy Library</h1>
+      <p>Explore our collection of logical fallacies and flawed arguments. Learn to identify and understand common errors in reasoning that can undermine arguments and lead to faulty conclusions.</p>
+      
+      <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" id="search-input" placeholder="Search fallacies...">
+      </div>
+      
+      <div class="filters-container">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="informal">Informal</button>
+        <button class="filter-btn" data-category="logical">Logical</button>
+        <button class="filter-btn" data-category="statistical">Statistical</button>
+        <button class="filter-btn" data-category="political">Political</button>
+      </div>
+    </div>
+  </header>
+  
+  <main class="container">
+    <div id="fallacies-container" class="fallacies-grid">
+      <!-- Fallacy cards will be populated by JavaScript -->
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="container footer-content">
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="fallacies.html">Fallacy Library</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="did-you-know" id="did-you-know">
+        <!-- JS will inject rotating facts here -->
+      </div>
+      <div class="copyright">&copy; 2025 BadReason.com. All rights reserved.</div>
+    </div>
+  </footer>
+  
+  <script>
+    // Fallacy data - in a real app, this would come from an API or database
+    const fallacies = [
+      {
+        id: 'poisoning-the-well',
+        name: 'Poisoning the Well',
+        summary: 'Presenting negative information about a person before they speak to discredit their argument in advance.',
+        category: 'informal',
+        example: 'Before you listen to John\'s argument about climate change, you should know he was once arrested for protesting.',
+        definition: 'Poisoning the well is a rhetorical device where negative information about a target is presented with the intention of discrediting everything that the target person is about to say. It works by creating a negative bias in the audience before the target even speaks.'
+      },
+      {
+        id: 'red-herring',
+        name: 'Red Herring',
+        summary: 'Introducing irrelevant material to the argument to distract and lead towards a different conclusion.',
+        category: 'informal',
+        example: 'I know I was caught speeding, but think about all the dangerous criminals out there who haven\'t been caught yet!',
+        definition: 'A red herring is a logical fallacy that occurs when something irrelevant is introduced to an argument to divert attention from the actual issue. The name comes from the practice of using a strong-smelling fish to throw hunting dogs off a trail.'
+      },
+      {
+        id: 'non-sequitur',
+        name: 'Non Sequitur',
+        summary: 'A conclusion or statement that does not logically follow from the previous argument or statement.',
+        category: 'logical',
+        example: 'The sky is blue, so we should have pizza for dinner.',
+        definition: 'A non sequitur is a conclusion or reply that doesn\'t follow logically from the previous statement. In Latin, it means \'it does not follow.\' This fallacy occurs when there is no clear connection between the premise and the conclusion.'
+      },
+      {
+        id: 'straw-man',
+        name: 'Straw Man',
+        summary: 'Misrepresenting someone\'s argument to make it easier to attack.',
+        category: 'informal',
+        example: 'Person A: We should give more funding to schools. Person B: So you think we should waste money on frivolous programs instead of fixing roads?',
+        definition: 'A straw man fallacy occurs when someone takes another person\'s argument or point, distorts it or exaggerates it in some kind of extreme way, and then attacks the extreme distortion, as if that is really the claim the first person is making.'
+      },
+      {
+        id: 'ad-hominem',
+        name: 'Ad Hominem',
+        summary: 'Attacking the person instead of the argument.',
+        category: 'informal',
+        example: 'You can\'t trust John\'s opinion on climate change because he\'s not a scientist.',
+        definition: 'An ad hominem argument is a personal attack against the source of an argument, rather than against the argument itself. It occurs when someone attacks the person making the argument rather than the argument itself.'
+      },
+      {
+        id: 'false-dilemma',
+        name: 'False Dilemma',
+        summary: 'Presenting two alternative states as the only possibilities, when in fact more possibilities exist.',
+        category: 'logical',
+        example: 'You\'re either with us, or you\'re against us.',
+        definition: 'A false dilemma presents a situation with only two possible outcomes, when in reality there are more options available. It forces an either/or choice when in fact there is a range of possibilities.'
+      },
+      {
+        id: 'appeal-to-authority',
+        name: 'Appeal to Authority',
+        summary: 'Using an authority figure as evidence when they are not a reliable source.',
+        category: 'informal',
+        example: 'A famous actor says this diet pill works, so it must be effective.',
+        definition: 'An appeal to authority is an argument from the fact that a person judged to be an authority affirms a proposition to the claim that the proposition is true.'
+      },
+      {
+        id: 'slippery-slope',
+        name: 'Slippery Slope',
+        summary: 'Arguing that a relatively small first step leads to a chain of related events culminating in some significant impact.',
+        category: 'informal',
+        example: 'If we allow students to redo this test, soon they\'ll want to redo every assignment, and the entire education system will collapse!',
+        definition: 'A slippery slope argument suggests that a relatively small first step leads to a chain of related events culminating in some significant impact, much like an object given a small push over the edge of a slope sliding all the way to the bottom.'
+      },
+      {
+        id: 'hasty-generalization',
+        name: 'Hasty Generalization',
+        summary: 'Making a claim based on insufficient or biased evidence.',
+        category: 'statistical',
+        example: 'I met two people from that city and they were both rude, so everyone from there must be rude.',
+        definition: 'A hasty generalization is a fallacy in which a conclusion is not logically justified by sufficient or unbiased evidence.'
+      },
+      {
+        id: 'post-hoc',
+        name: 'Post Hoc Ergo Propter Hoc',
+        summary: 'Assuming that because one thing happened after another, it must have happened because of it.',
+        category: 'logical',
+        example: 'I wore my lucky shirt and then I aced the test, so my shirt must be lucky.',
+        definition: 'Post hoc ergo propter hoc is a logical fallacy that states \"Since event Y followed event X, event Y must have been caused by event X.\" It is often shortened to simply post hoc fallacy.'
+      },
+      {
+        id: 'genetic',
+        name: 'Genetic Fallacy',
+        summary: 'Judging something as good or bad based on where it comes from, or from whom it came.',
+        category: 'informal',
+        example: 'That idea was proposed by someone from a different political party, so it must be bad.',
+        definition: 'The genetic fallacy is a logical fallacy that occurs when a claim is accepted or rejected based on the source of the evidence, rather than on the quality or applicability of the evidence.'
+      },
+      {
+        id: 'begging-the-question',
+        name: 'Begging the Question',
+        summary: 'When an argument\'s premises assume the truth of the conclusion, instead of supporting it.',
+        category: 'logical',
+        example: 'The death penalty is wrong because it\'s immoral to kill people.',
+        definition: 'Begging the question is a logical fallacy that occurs when an argument\'s premises assume the truth of the conclusion, instead of supporting it. It is a form of circular reasoning.'
+      },
+      {
+        id: 'appeal-to-emotion',
+        name: 'Appeal to Emotion',
+        summary: 'Manipulating an emotional response in place of a valid or compelling argument.',
+        category: 'informal',
+        example: 'If you cared about the future of our children, you would support this education bill.',
+        definition: 'An appeal to emotion is a logical fallacy characterized by the manipulation of the recipient\'s emotions in order to win an argument, especially in the absence of factual evidence.'
+      },
+      {
+        id: 'tu-quoque',
+        name: 'Tu Quoque',
+        summary: 'Avoiding having to engage with criticism by turning it back on the accuser.',
+        category: 'informal',
+        example: 'You say I shouldn\'t speed, but you speed too!',
+        definition: 'Tu quoque is a discussion technique that intends to discredit the opponent\'s argument by attacking the opponent\'s own personal behavior and actions as being inconsistent with their argument.'
+      },
+      {
+        id: 'personal-incredulity',
+        name: 'Personal Incredulity',
+        summary: 'Because something is difficult to understand or seems improbable, it must not be true.',
+        category: 'informal',
+        example: 'I can\'t understand how evolution works, so it must be false.',
+        definition: 'The argument from personal incredulity is a logical fallacy that occurs when someone finds a concept or claim difficult to understand, and therefore concludes that it is not true.'
+      }
+    ];
+    
+    // DOM Elements
+    const fallaciesContainer = document.getElementById('fallacies-container');
+    const searchInput = document.getElementById('search-input');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    // Current filter state
+    let currentFilter = 'all';
+    let currentSearch = '';
+    
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', () => {
+      displayFallacies();
+      setupEventListeners();
+      
+      displayRandomFact();
+    });
+    
+    // Display fallacies based on current filters
+    function displayFallacies() {
+      // Clear the container
+      fallaciesContainer.innerHTML = '';
+      
+      // Filter fallacies
+      const filteredFallacies = fallacies.filter(fallacy => {
+        // Apply category filter
+        const matchesCategory = currentFilter === 'all' || 
+                              fallacy.category.toLowerCase() === currentFilter.toLowerCase();
+        
+        // Apply search filter
+        const searchTerm = currentSearch.toLowerCase();
+        const matchesSearch = !searchTerm || 
+                            fallacy.name.toLowerCase().includes(searchTerm) || 
+                            fallacy.summary.toLowerCase().includes(searchTerm) ||
+                            fallacy.definition.toLowerCase().includes(searchTerm);
+        
+        return matchesCategory && matchesSearch;
+      });
+      
+      // Display results or no results message
+      if (filteredFallacies.length === 0) {
+        fallaciesContainer.innerHTML = `
+          <div class="no-results">
+            <h3>No fallacies found</h3>
+            <p>Try adjusting your search or filter criteria.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Create and append fallacy cards
+      filteredFallacies.forEach(fallacy => {
+        const card = createFallacyCard(fallacy);
+        fallaciesContainer.appendChild(card);
+      });
+    }
+    
+    // Create a fallacy card element
+    function createFallacyCard(fallacy) {
+      // Format category for display
+      const formattedCategory = fallacy.category.charAt(0).toUpperCase() + fallacy.category.slice(1);
+      
+      // Create card element
+      const card = document.createElement('div');
+      card.className = 'fallacy-card animate-on-scroll';
+      card.innerHTML = `
+        <div class="card-header">
+          <span class="card-category" style="background-color: ${getCategoryColor(fallacy.category)}">
+            ${formattedCategory}
+          </span>
+          <h3>${fallacy.name}</h3>
+        </div>
+        <div class="card-body">
+          <p>${fallacy.summary}</p>
+        </div>
+        <div class="card-footer">
+          <a href="fallacies/fallacy-${fallacy.id}.html" class="read-more">Learn More</a>
+        </div>
+      `;
+      
+      // Add hover effect
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+        card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.15)';
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+      });
+      
+      return card;
+    }
+    
+    // Get color based on category
+    function getCategoryColor(category) {
+      const colors = {
+        'informal': '#B85042',    // Red
+        'logical': '#7D9D9C',     // Teal
+        'statistical': '#E9B44C', // Yellow
+        'political': '#9B6A6C'    // Muted red
+      };
+      
+      return colors[category.toLowerCase()] || '#7D9D9C'; // Default to teal
+    }
+    
+    // Set up event listeners
+    function setupEventListeners() {
+      // Search input
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentSearch = e.target.value.trim();
+          displayFallacies();
+        });
+      }
+      
+      // Filter buttons
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Update active button
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          
+          // Update filter and display
+          currentFilter = button.dataset.category;
+          displayFallacies();
+          
+          // Scroll to results
+          window.scrollTo({
+            top: document.querySelector('.fallacies-grid').offsetTop - 100,
+            behavior: 'smooth'
+          });
+        });
+      });
+    }
+    
+    // Display a random fun fact in the footer
+    function displayRandomFact() {
+      const didYouKnowContainer = document.getElementById('did-you-know');
+      if (!didYouKnowContainer) return;
+      
+      const funFacts = [
+        "The term 'straw man' comes from the idea of setting up a straw man that's easy to knock down, similar to misrepresenting someone's argument to make it easier to attack.",
+        "Ad hominem is Latin for 'to the person' and has been used as a logical fallacy since at least the 16th century.",
+        "The 'bandwagon fallacy' gets its name from the phrase 'jump on the bandwagon,' which originated in 19th-century American politics.",
+        "The 'red herring' fallacy is named after the practice of using strong-smelling fish to throw hunting dogs off a trail.",
+        "The 'appeal to authority' was first described by Aristotle in his work 'Rhetoric' over 2,300 years ago.",
+        "The 'false dilemma' is also known as the 'either/or' or 'black and white' fallacy.",
+        "The 'slippery slope' argument is only fallacious when the predicted outcome isn't necessarily likely to occur.",
+        "The 'hasty generalization' is sometimes called 'jumping to conclusions' or 'insufficient sample' fallacy.",
+        "The 'post hoc' fallacy gets its name from the Latin phrase 'post hoc, ergo propter hoc,' meaning 'after this, therefore because of this.'",
+        "The 'begging the question' fallacy is also known as 'circular reasoning' or 'petitio principii' in Latin."
+      ];
+      
+      const randomIndex = Math.floor(Math.random() * funFacts.length);
+      const fact = funFacts[randomIndex];
+      
+      const html = `
+        <div class="fact-content">
+          <strong>Did you know?</strong> ${fact}
+        </div>
+      `;
+      
+      didYouKnowContainer.innerHTML = html;
+      
+      // Change fact every 10 seconds
+      setInterval(() => {
+        displayRandomFact();
+      }, 10000);
+    }
+    
+    // Add animation on scroll
+    const animateOnScroll = () => {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    };
+    
+    // Initialize scroll animations
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+  </script>
+</body>
+</html>
