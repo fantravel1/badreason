@@ -308,43 +308,107 @@ img {
   }
 }
 
+/* Mobile Menu */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: 1.5rem;
+  z-index: 1001;
+}
+
+.mobile-menu-toggle:hover {
+  color: var(--accent-red);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .mission {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .mission-illustration {
     margin-bottom: 2rem;
   }
-  
+
   .hero h1 {
     font-size: 3.5rem;
   }
-  
+
   .subtitle {
     font-size: 1.3rem;
   }
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none; /* Will be toggled by mobile menu */
+  .mobile-menu-toggle {
+    display: block;
   }
-  
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--white);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    padding: 5rem 2rem 2rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light-gray);
+  }
+
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+
+  .nav-overlay.active {
+    display: block;
+  }
+
   .hero h1 {
     font-size: 2.8rem;
   }
-  
+
   .subtitle {
     font-size: 1.2rem;
   }
-  
+
   .footer-nav {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+
+  /* Better touch targets for mobile */
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 
@@ -352,13 +416,22 @@ img {
   .hero h1 {
     font-size: 2.2rem;
   }
-  
+
   .subtitle {
     font-size: 1.1rem;
   }
-  
+
   .cta-btn {
     padding: 0.7rem 1.5rem;
     font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Smaller text for very small screens */
+  body {
+    font-size: 0.95rem;
   }
 }

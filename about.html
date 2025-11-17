@@ -258,13 +258,18 @@
   <nav class="navbar">
     <div class="container nav-content">
       <a href="index.html" class="logo">BadReason.com</a>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+        <i class="fas fa-bars"></i>
+      </button>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="fallacies.html">Fallacy Library</a></li>
+        <li><a href="game.html">Fallacy Detective</a></li>
         <li><a href="about.html" class="active">About</a></li>
       </ul>
     </div>
   </nav>
+  <div class="nav-overlay"></div>
   
   <header class="about-hero">
     <div class="container">
@@ -400,6 +405,40 @@
         displayRandomFact();
       }, 10000);
     }
+
+    // Setup mobile menu functionality
+    function setupMobileMenu() {
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const navOverlay = document.querySelector('.nav-overlay');
+
+      if (!menuToggle) return;
+
+      const toggleMenu = () => {
+        navLinks.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if (icon) {
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
+        }
+      };
+
+      menuToggle.addEventListener('click', toggleMenu);
+      navOverlay.addEventListener('click', toggleMenu);
+
+      // Close menu when clicking a link
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (navLinks.classList.contains('active')) {
+            toggleMenu();
+          }
+        });
+      });
+    }
+
+    // Initialize mobile menu on page load
+    document.addEventListener('DOMContentLoaded', setupMobileMenu);
   </script>
 </body>
 </html>
