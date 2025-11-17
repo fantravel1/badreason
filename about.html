@@ -3,8 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about BadReason.com - our mission to promote critical thinking and help people recognize logical fallacies in everyday arguments.">
-  <title>About BadReason.com | Promoting Critical Thinking</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="About BadReason.com - Our Mission for Critical Thinking Education">
+  <meta name="description" content="Learn about BadReason.com's mission to promote critical thinking and help people recognize logical fallacies. Free educational resources for better reasoning.">
+  <meta name="keywords" content="about badreason, critical thinking education, logical fallacy education, reasoning skills, educational mission, free learning resources">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://badreason.com/about.html">
+  <meta property="og:title" content="About BadReason.com - Critical Thinking Education">
+  <meta property="og:description" content="Learn about our mission to promote critical thinking and help people recognize logical fallacies.">
+  <meta property="og:image" content="https://badreason.com/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://badreason.com/about.html">
+  <meta property="twitter:title" content="About BadReason.com - Critical Thinking Education">
+  <meta property="twitter:description" content="Our mission to promote critical thinking and help people recognize logical fallacies.">
+  <meta property="twitter:image" content="https://badreason.com/og-image.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://badreason.com/about.html">
+
+  <title>About BadReason.com - Our Mission for Critical Thinking Education</title>
+
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Merriweather:700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600|Open+Sans:400,600&display=swap" rel="stylesheet">
@@ -270,7 +294,61 @@
     </div>
   </nav>
   <div class="nav-overlay"></div>
-  
+
+  <!-- Breadcrumb Navigation -->
+  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+    <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="index.html" itemprop="item">
+          <span itemprop="name">Home</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li>
+      <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">About</span>
+        <meta itemprop="position" content="2" />
+      </li>
+    </ol>
+  </nav>
+
+  <!-- Structured Data - Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://badreason.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://badreason.com/about.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data - AboutPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About BadReason.com",
+    "description": "Learn about BadReason.com's mission to promote critical thinking and help people recognize logical fallacies",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "BadReason.com",
+      "url": "https://badreason.com",
+      "description": "Educational resource for learning about logical fallacies and improving critical thinking skills"
+    }
+  }
+  </script>
+
   <header class="about-hero">
     <div class="container">
       <h1>About BadReason.com</h1>
