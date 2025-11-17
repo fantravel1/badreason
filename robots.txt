@@ -1,0 +1,28 @@
+# robots.txt for BadReason.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://badreason.com/sitemap.xml
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+
+# Allow all major search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Disallow access to development/temp files if any
+Disallow: /tmp/
+Disallow: /*.bak$
+Disallow: /*~$

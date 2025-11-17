@@ -3,15 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A library of flawed logic and fallacy education. Learn to spot bad reasoning and improve your critical thinking.">
-  <title>BadReason.com – Logical Fallacies & Flawed Arguments</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="BadReason.com – Learn Logical Fallacies & Improve Critical Thinking">
+  <meta name="description" content="Master critical thinking with our comprehensive logical fallacy library. Interactive games, real-world examples, and expert resources to identify bad reasoning.">
+  <meta name="keywords" content="logical fallacies, critical thinking, reasoning errors, argumentation, bad arguments, debate skills, logical reasoning, fallacy examples, critical analysis, cognitive biases">
+  <meta name="author" content="BadReason.com">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://badreason.com/">
+  <meta property="og:title" content="BadReason.com – Learn Logical Fallacies & Improve Critical Thinking">
+  <meta property="og:description" content="Master critical thinking with our comprehensive logical fallacy library, interactive games, and expert resources.">
+  <meta property="og:image" content="https://badreason.com/og-image.jpg">
+  <meta property="og:site_name" content="BadReason.com">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://badreason.com/">
+  <meta property="twitter:title" content="BadReason.com – Learn Logical Fallacies & Critical Thinking">
+  <meta property="twitter:description" content="Master critical thinking with our comprehensive logical fallacy library and interactive games.">
+  <meta property="twitter:image" content="https://badreason.com/og-image.jpg">
+
+  <!-- Mobile Optimization -->
+  <meta name="theme-color" content="#7D9D9C">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="BadReason">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://badreason.com/">
+
+  <title>BadReason.com – Logical Fallacies & Critical Thinking Resource</title>
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Merriweather:700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Inter:400,600|Open+Sans:400,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Merriweather:wght@700&family=Inter:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="icon" href="favicon.ico">
+
+  <!-- Structured Data - Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BadReason.com",
+    "url": "https://badreason.com",
+    "logo": "https://badreason.com/favicon.ico",
+    "description": "Educational resource for learning about logical fallacies and improving critical thinking skills",
+    "sameAs": []
+  }
+  </script>
+
+  <!-- Structured Data - Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BadReason.com",
+    "url": "https://badreason.com",
+    "description": "Comprehensive resource for learning about logical fallacies, critical thinking, and reasoning skills",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://badreason.com/fallacies.html?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Structured Data - Educational Content -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    "name": "Logical Fallacies Learning Center",
+    "description": "Interactive learning resource for understanding and identifying logical fallacies in arguments and reasoning",
+    "educationalLevel": "Beginner to Advanced",
+    "learningResourceType": ["Interactive Tutorial", "Reference Material", "Educational Game"],
+    "author": {
+      "@type": "Organization",
+      "name": "BadReason.com"
+    },
+    "teaches": "Critical thinking, logical reasoning, fallacy identification, argumentation analysis",
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "student"
+    }
+  }
+  </script>
+
   <style>
-    /* Hero Section */
+    /* Page-specific styles */
     .hero {
       min-height: 90vh;
       display: flex;
@@ -20,21 +111,21 @@
       align-items: center;
       text-align: center;
       padding: 6rem 1.5rem 4rem;
-      background: linear-gradient(135deg, rgba(245, 245, 247, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), 
-                  url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UHJlc2VydmU9InNsaWNlIiBwYXR0ZXJuVHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiM3OTg4ODciIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
+      background: linear-gradient(135deg, rgba(245, 245, 247, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%),
+                  url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iIzc5ODg4NyIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
       background-size: cover;
       background-position: center;
       position: relative;
       overflow: hidden;
     }
-    
+
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 900px;
       margin: 0 auto;
     }
-    
+
     .hero h1 {
       font-size: 4rem;
       margin-bottom: 1.5rem;
@@ -42,7 +133,7 @@
       line-height: 1.1;
       animation: fadeInUp 1s ease-out;
     }
-    
+
     .hero .subtitle {
       font-size: 1.5rem;
       color: var(--accent-teal);
@@ -53,40 +144,40 @@
       animation: fadeInUp 1s ease-out 0.2s both;
       font-weight: 500;
     }
-    
+
     /* Features Section */
     .features {
       padding: 6rem 0;
       background-color: var(--white);
     }
-    
+
     .section-header {
       text-align: center;
       max-width: 700px;
       margin: 0 auto 4rem;
     }
-    
+
     .section-header h2 {
       font-size: 2.5rem;
       color: var(--text-color);
       margin-bottom: 1rem;
     }
-    
+
     .section-header p {
       color: #666;
       font-size: 1.1rem;
       line-height: 1.6;
     }
-    
+
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
-    
+
     .feature-card {
       background: var(--white);
       border-radius: var(--border-radius);
@@ -95,31 +186,31 @@
       transition: var(--transition);
       border: 1px solid #eee;
     }
-    
+
     .feature-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
-    
+
     .feature-icon {
       font-size: 2.5rem;
       color: var(--accent-teal);
       margin-bottom: 1.5rem;
       display: inline-block;
     }
-    
+
     .feature-card h3 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
       color: var(--text-color);
     }
-    
+
     .feature-card p {
       color: #666;
       line-height: 1.6;
       margin-bottom: 1.5rem;
     }
-    
+
     .learn-more {
       display: inline-flex;
       align-items: center;
@@ -127,135 +218,61 @@
       font-weight: 600;
       transition: var(--transition);
     }
-    
+
     .learn-more i {
       margin-left: 0.5rem;
       transition: var(--transition);
     }
-    
+
     .learn-more:hover {
       color: var(--accent-red);
     }
-    
+
     .learn-more:hover i {
       transform: translateX(3px);
     }
-    
-    /* Fallacy of the Day */
-    .fallacy-day {
+
+    /* FAQ Section */
+    .faq-section {
       padding: 6rem 0;
       background-color: #f9f9f9;
-      position: relative;
-      overflow: hidden;
     }
-    
-    .fallacy-day::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI0I4NTA0MiIgZmlsbC1vcGFjaXR5PSIwLjA1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+') center/cover;
-      opacity: 0.1;
-      z-index: 0;
-    }
-    
-    .fallacy-day-content {
-      position: relative;
-      z-index: 1;
-      max-width: 1200px;
+
+    .faq-container {
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
-    
-    .fallacy-day-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    
-    .fallacy-day-header h2 {
-      font-size: 2.5rem;
-      color: var(--text-color);
-      margin-bottom: 1rem;
-    }
-    
-    .fallacy-day-header p {
-      color: #666;
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    .fallacy-card {
-      background: var(--white);
+
+    .faq-item {
+      background: white;
       border-radius: var(--border-radius);
-      overflow: hidden;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
       box-shadow: var(--box-shadow);
-      display: flex;
-      max-width: 900px;
-      margin: 0 auto;
-      transition: var(--transition);
     }
-    
-    .fallacy-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-    
-    .fallacy-card-content {
-      padding: 2.5rem;
-      flex: 1;
-    }
-    
-    .fallacy-category {
-      display: inline-block;
-      padding: 0.3rem 1rem;
-      background-color: var(--accent-red);
-      color: white;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 1.5rem;
-    }
-    
-    .fallacy-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+
+    .faq-question {
+      font-size: 1.3rem;
+      font-weight: 700;
       color: var(--text-color);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
     }
-    
-    .fallacy-card p {
-      color: #666;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-    
-    .fallacy-card .example {
-      background-color: #f8f9fa;
-      border-left: 4px solid var(--accent-teal);
-      padding: 1.25rem;
-      border-radius: 0 var(--border-radius) var(--border-radius) 0;
-      margin: 1.5rem 0;
-      font-style: italic;
-    }
-    
-    .fallacy-card .example strong {
+
+    .faq-question i {
       color: var(--accent-teal);
-      display: block;
-      margin-bottom: 0.5rem;
+      margin-right: 0.75rem;
+      margin-top: 0.25rem;
     }
-    
-    .fallacy-card-illustration {
-      flex: 0 0 300px;
-      background-color: #f0f0f0;
-      background-position: center;
-      background-size: cover;
-      display: none; /* Hidden on mobile */
+
+    .faq-answer {
+      color: #666;
+      line-height: 1.8;
+      font-size: 1.05rem;
     }
-    
+
     /* CTA Section */
     .cta-section {
       padding: 6rem 1.5rem;
@@ -263,32 +280,32 @@
       color: white;
       text-align: center;
     }
-    
+
     .cta-content {
       max-width: 700px;
       margin: 0 auto;
     }
-    
+
     .cta-content h2 {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
       color: white;
     }
-    
+
     .cta-content p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
       opacity: 0.9;
       line-height: 1.6;
     }
-    
+
     .btn-group {
       display: flex;
       gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
     }
-    
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -302,104 +319,28 @@
       font-size: 0.9rem;
       text-align: center;
     }
-    
+
     .btn-primary {
       background-color: white;
       color: var(--accent-teal);
     }
-    
+
     .btn-primary:hover {
       background-color: #f0f0f0;
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
-    
+
     .btn-outline {
       border: 2px solid white;
       color: white;
     }
-    
+
     .btn-outline:hover {
       background-color: rgba(255, 255, 255, 0.1);
       transform: translateY(-2px);
     }
-    
-    /* Responsive Adjustments */
-    @media (max-width: 1024px) {
-      .hero h1 {
-        font-size: 3.5rem;
-      }
-      
-      .fallacy-card {
-        flex-direction: column;
-      }
-      
-      .fallacy-card-illustration {
-        display: block;
-        height: 200px;
-        flex: 0 0 auto;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .hero {
-        padding: 5rem 1.5rem 3rem;
-      }
-      
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-      
-      .hero .subtitle {
-        font-size: 1.3rem;
-      }
-      
-      .section-header h2 {
-        font-size: 2rem;
-      }
-      
-      .fallacy-day-header h2 {
-        font-size: 2rem;
-      }
-      
-      .cta-content h2 {
-        font-size: 2rem;
-      }
-      
-      .btn-group {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
-      .btn {
-        width: 100%;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      
-      .hero .subtitle {
-        font-size: 1.1rem;
-      }
-      
-      .section-header h2, 
-      .fallacy-day-header h2,
-      .cta-content h2 {
-        font-size: 1.8rem;
-      }
-      
-      .fallacy-card-content {
-        padding: 1.5rem;
-      }
-      
-      .fallacy-card h3 {
-        font-size: 1.5rem;
-      }
-    }
-    
+
     /* Animations */
     @keyframes fadeInUp {
       from {
@@ -411,28 +352,82 @@
         transform: translateY(0);
       }
     }
-    
+
     .animate-on-scroll {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-    
+
     .animate-on-scroll.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 5rem 1.5rem 3rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.2rem;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.1rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .faq-question {
+        font-size: 1.1rem;
+      }
+
+      .faq-answer {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container nav-content">
-      <a href="index.html" class="logo">BadReason.com</a>
-      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-        <i class="fas fa-bars"></i>
+      <a href="index.html" class="logo" aria-label="BadReason.com Home">BadReason.com</a>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" role="menubar">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="fallacies.html">Fallacy Library</a></li>
         <li><a href="game.html">Fallacy Detective</a></li>
@@ -440,298 +435,260 @@
       </ul>
     </div>
   </nav>
-  <div class="nav-overlay"></div>
+  <div class="nav-overlay" aria-hidden="true"></div>
 
   <!-- Hero Section -->
   <header class="hero">
     <div class="hero-content">
       <h1>Think Clearly, Reason Better</h1>
-      <p class="subtitle">Learn to identify and avoid common logical fallacies that undermine critical thinking and productive discussions.</p>
+      <p class="subtitle">Learn to identify and avoid logical fallacies that undermine critical thinking and productive discussions.</p>
       <div class="cta-buttons">
-        <a href="fallacies.html" class="cta-btn">Explore Fallacies</a>
+        <a href="fallacies.html" class="cta-btn" aria-label="Explore our comprehensive fallacy library">Explore Fallacies</a>
       </div>
     </div>
   </header>
 
-  <!-- Features Section -->
-  <section class="features">
-    <div class="section-header">
-      <h2>Why Study Logical Fallacies?</h2>
-      <p>Understanding logical fallacies helps you think more clearly, make better arguments, and recognize when others are using flawed reasoning.</p>
-    </div>
-    
-    <div class="features-grid">
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">
-          <i class="fas fa-brain"></i>
-        </div>
-        <h3>Sharpen Your Mind</h3>
-        <p>Develop critical thinking skills that help you analyze arguments and spot weak reasoning in everyday discussions, media, and decision-making.</p>
-        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
-      </div>
-      
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">
-          <i class="fas fa-comments"></i>
-        </div>
-        <h3>Improve Discussions</h3>
-        <p>Engage in more productive conversations by identifying and avoiding common pitfalls in reasoning that can derail meaningful dialogue.</p>
-        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
-      </div>
-      
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <h3>Resist Manipulation</h3>
-        <p>Recognize when others use flawed arguments to persuade or manipulate, and make decisions based on sound reasoning rather than rhetoric.</p>
-        <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Features Section -->
+    <section class="features" id="what-are-fallacies">
+      <div class="section-header">
+        <h2>Why Learn About Logical Fallacies?</h2>
+        <p>Understanding logical fallacies is essential for critical thinking, effective communication, and making well-reasoned decisions.</p>
       </div>
 
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">
-          <i class="fas fa-gamepad"></i>
-        </div>
-        <h3>Practice with Games</h3>
-        <p>Test your critical thinking skills with our interactive Fallacy Detective game. Identify fallacies in real-world scenarios and build your streak!</p>
-        <a href="game.html" class="learn-more">Play now <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Fallacy of the Day -->
-  <section class="fallacy-day" id="fallacy-day">
-    <div class="fallacy-day-content">
-      <div class="fallacy-day-header">
-        <h2>Fallacy of the Day</h2>
-        <p>Each day we highlight a different logical fallacy to help you recognize and understand common errors in reasoning.</p>
-      </div>
-      
-      <div class="fallacy-card">
-        <div class="fallacy-card-content">
-          <span class="fallacy-category" id="fallacy-category">Informal Fallacy</span>
-          <h3 id="fallacy-name">Straw Man</h3>
-          <p id="fallacy-description">Misrepresenting someone's argument to make it easier to attack by exaggerating, misrepresenting, or just completely fabricating it.</p>
-          
-          <div class="example">
-            <strong>Example:</strong>
-            <p id="fallacy-example">Person A: We should give more funding to schools. Person B: So you think we should waste money on frivolous programs instead of fixing roads? That's irresponsible!</p>
+      <div class="features-grid">
+        <article class="feature-card animate-on-scroll">
+          <div class="feature-icon">
+            <i class="fas fa-brain" aria-hidden="true"></i>
           </div>
-          
-          <a href="fallacy-straw-man.html" class="btn btn-outline">Learn More</a>
-        </div>
-        <div class="fallacy-card-illustration" style="background-image: url('https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');">
-          <!-- Fallacy illustration -->
-        </div>
-      </div>
-    </div>
-  </section>
+          <h3>Sharpen Your Mind</h3>
+          <p>Develop critical thinking skills that help you analyze arguments and spot weak reasoning in everyday discussions, media, and decision-making.</p>
+          <a href="fallacies.html" class="learn-more">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="cta-content">
-      <h2>Ready to Improve Your Critical Thinking?</h2>
-      <p>Explore our comprehensive library of logical fallacies, complete with definitions, examples, and tips for recognizing and avoiding them in your own reasoning.</p>
-      <div class="btn-group">
-        <a href="fallacies.html" class="btn btn-primary">Browse All Fallacies</a>
-        <a href="about.html" class="btn btn-outline">Learn More About Us</a>
+        <article class="feature-card animate-on-scroll">
+          <div class="feature-icon">
+            <i class="fas fa-comments" aria-hidden="true"></i>
+          </div>
+          <h3>Improve Discussions</h3>
+          <p>Engage in more productive conversations by identifying and avoiding common pitfalls in reasoning that can derail meaningful dialogue.</p>
+          <a href="about.html" class="learn-more">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="feature-card animate-on-scroll">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          </div>
+          <h3>Resist Manipulation</h3>
+          <p>Recognize when others use flawed arguments to persuade or manipulate, and make decisions based on sound reasoning rather than rhetoric.</p>
+          <a href="fallacies.html" class="learn-more">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="feature-card animate-on-scroll">
+          <div class="feature-icon">
+            <i class="fas fa-gamepad" aria-hidden="true"></i>
+          </div>
+          <h3>Practice with Games</h3>
+          <p>Test your critical thinking skills with our interactive Fallacy Detective game. Identify fallacies in real-world scenarios and build your streak!</p>
+          <a href="game.html" class="learn-more">Play now <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- FAQ Section with Schema Markup -->
+    <section class="faq-section" id="critical-thinking">
+      <div class="faq-container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Common questions about logical fallacies and critical thinking</p>
+        </div>
+
+        <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 class="faq-question" itemprop="name">
+            <i class="fas fa-question-circle" aria-hidden="true"></i>
+            What is a logical fallacy?
+          </h3>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">A logical fallacy is an error in reasoning that undermines the logic of an argument. Fallacies can be either formal (errors in logical structure) or informal (errors in content or context). Understanding fallacies helps you identify flawed arguments and strengthen your own reasoning.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 class="faq-question" itemprop="name">
+            <i class="fas fa-question-circle" aria-hidden="true"></i>
+            Why should I learn about logical fallacies?
+          </h3>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Learning about logical fallacies improves your critical thinking skills, helps you make better decisions, enables you to evaluate arguments more effectively, and protects you from manipulation. It's essential for anyone who wants to think clearly and communicate effectively in today's information-rich world.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 class="faq-question" itemprop="name">
+            <i class="fas fa-question-circle" aria-hidden="true"></i>
+            What are the most common logical fallacies?
+          </h3>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">The most common logical fallacies include Ad Hominem (attacking the person), Straw Man (misrepresenting arguments), False Dilemma (presenting only two options), Appeal to Authority (relying on unqualified authority), and Slippery Slope (assuming one thing leads to extreme consequences). Our library covers these and many more with detailed explanations and examples.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 class="faq-question" itemprop="name">
+            <i class="fas fa-question-circle" aria-hidden="true"></i>
+            How can I practice identifying fallacies?
+          </h3>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">The best way to practice is through active application. Try our Fallacy Detective game for interactive practice with real-world scenarios. You can also practice by analyzing news articles, political speeches, advertisements, and social media discussions. Start by learning one fallacy at a time and looking for examples in your daily life.</p>
+          </div>
+        </article>
+
+        <article class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <h3 class="faq-question" itemprop="name">
+            <i class="fas fa-question-circle" aria-hidden="true"></i>
+            Can someone use a fallacy and still be right?
+          </h3>
+          <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Yes! A fallacious argument can still have a true conclusion. The problem with fallacies is not necessarily that the conclusion is false, but that the reasoning used to reach that conclusion is flawed. This means the conclusion is not properly supported by the given premises, even if it happens to be true for other reasons.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Structured Data for FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a logical fallacy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A logical fallacy is an error in reasoning that undermines the logic of an argument. Fallacies can be either formal (errors in logical structure) or informal (errors in content or context). Understanding fallacies helps you identify flawed arguments and strengthen your own reasoning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why should I learn about logical fallacies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Learning about logical fallacies improves your critical thinking skills, helps you make better decisions, enables you to evaluate arguments more effectively, and protects you from manipulation. It's essential for anyone who wants to think clearly and communicate effectively in today's information-rich world."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the most common logical fallacies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The most common logical fallacies include Ad Hominem (attacking the person), Straw Man (misrepresenting arguments), False Dilemma (presenting only two options), Appeal to Authority (relying on unqualified authority), and Slippery Slope (assuming one thing leads to extreme consequences)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I practice identifying fallacies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The best way to practice is through active application. Try our Fallacy Detective game for interactive practice with real-world scenarios. You can also practice by analyzing news articles, political speeches, advertisements, and social media discussions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can someone use a fallacy and still be right?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! A fallacious argument can still have a true conclusion. The problem with fallacies is not necessarily that the conclusion is false, but that the reasoning used to reach that conclusion is flawed."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Ready to Improve Your Critical Thinking?</h2>
+        <p>Explore our comprehensive library of logical fallacies, complete with definitions, examples, and tips for recognizing and avoiding them in your own reasoning.</p>
+        <div class="btn-group">
+          <a href="fallacies.html" class="btn btn-primary">Browse All Fallacies</a>
+          <a href="game.html" class="btn btn-outline">Play Fallacy Detective</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container footer-content">
-      <nav class="footer-nav">
-        <a href="index.html">Home</a>
-        <a href="fallacies.html">Fallacy Library</a>
-        <a href="about.html">About</a>
-      </nav>
-      <div class="did-you-know" id="did-you-know">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="fallacies.html">Fallacy Library</a>
+          <a href="game.html">Fallacy Detective</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+
+      <div class="footer-section">
+        <h3>Learn More</h3>
+        <ul class="footer-links">
+          <li><a href="#what-are-fallacies">What Are Logical Fallacies?</a></li>
+          <li><a href="#critical-thinking">Critical Thinking Resources</a></li>
+          <li><a href="game.html">Practice with Games</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <ul class="footer-links">
+          <li><a href="sitemap.xml">Sitemap</a></li>
+          <li><a href="robots.txt">Robots.txt</a></li>
+        </ul>
+      </div>
+
+      <div class="did-you-know" id="did-you-know" role="complementary" aria-label="Fun fact">
         <!-- JS will inject rotating facts here -->
       </div>
-      <div class="copyright">&copy; 2025 BadReason.com. All rights reserved.</div>
+
+      <div class="footer-bottom">
+        <div class="copyright">&copy; 2025 BadReason.com. All rights reserved.</div>
+        <div class="footer-tagline">Empowering critical thinking, one fallacy at a time.</div>
+      </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="components.js"></script>
   <script>
-    // Fallacy data - in a real app, this would come from an API or database
-    const fallacies = [
-      {
-        id: 'straw-man',
-        name: 'Straw Man',
-        category: 'Informal Fallacy',
-        description: 'Misrepresenting someone\'s argument to make it easier to attack by exaggerating, misrepresenting, or just completely fabricating it.',
-        example: 'Person A: We should give more funding to schools. Person B: So you think we should waste money on frivolous programs instead of fixing roads? That\'s irresponsible!'
-      },
-      {
-        id: 'ad-hominem',
-        name: 'Ad Hominem',
-        category: 'Informal Fallacy',
-        description: 'Attacking the person making the argument rather than the argument itself.',
-        example: 'You can\'t trust John\'s opinion on climate change because he\'s not a scientist.'
-      },
-      {
-        id: 'false-dilemma',
-        name: 'False Dilemma',
-        category: 'Logical Fallacy',
-        description: 'Presenting two alternative states as the only possibilities, when in fact more possibilities exist.',
-        example: 'You\'re either with us, or you\'re against us.'
-      },
-      {
-        id: 'slippery-slope',
-        name: 'Slippery Slope',
-        category: 'Logical Fallacy',
-        description: 'Arguing that a relatively small first step leads to a chain of related events culminating in some significant impact.',
-        example: 'If we allow students to redo this test, soon they\'ll want to redo every assignment, and the entire education system will collapse!'
-      },
-      {
-        id: 'appeal-to-authority',
-        name: 'Appeal to Authority',
-        category: 'Informal Fallacy',
-        description: 'Using an authority figure as evidence when they are not a reliable source on the topic.',
-        example: 'A famous actor says this diet pill works, so it must be effective.'
-      }
-    ];
-
-    // DOM Elements
-    const fallacyDayContainer = document.getElementById('fallacy-day');
-    const fallacyName = document.getElementById('fallacy-name');
-    const fallacyCategory = document.getElementById('fallacy-category');
-    const fallacyDescription = document.getElementById('fallacy-description');
-    const fallacyExample = document.getElementById('fallacy-example');
-    const didYouKnowContainer = document.getElementById('did-you-know');
-
-    // Initialize the page when DOM is loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      displayFallacyOfTheDay();
-      displayRandomFact();
-      setupMobileMenu();
-      setupScrollAnimations();
-    });
-
-    // Setup mobile menu functionality
-    function setupMobileMenu() {
-      const menuToggle = document.querySelector('.mobile-menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const navOverlay = document.querySelector('.nav-overlay');
-
-      if (!menuToggle) return;
-
-      const toggleMenu = () => {
-        navLinks.classList.toggle('active');
-        navOverlay.classList.toggle('active');
-        const icon = menuToggle.querySelector('i');
-        if (icon) {
-          icon.classList.toggle('fa-bars');
-          icon.classList.toggle('fa-times');
-        }
-      };
-
-      menuToggle.addEventListener('click', toggleMenu);
-      navOverlay.addEventListener('click', toggleMenu);
-
-      // Close menu when clicking a link
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          if (navLinks.classList.contains('active')) {
-            toggleMenu();
-          }
-        });
-      });
-    }
-
-    // Display a random fallacy as Fallacy of the Day
-    function displayFallacyOfTheDay() {
-      if (!fallacyDayContainer) return;
-      
-      // Get a random fallacy
-      const randomIndex = Math.floor(Math.random() * fallacies.length);
-      const fallacy = fallacies[randomIndex];
-      
-      // Update the UI
-      if (fallacyName) fallacyName.textContent = fallacy.name;
-      if (fallacyCategory) fallacyCategory.textContent = fallacy.category;
-      if (fallacyDescription) fallacyDescription.textContent = fallacy.description;
-      if (fallacyExample) {
-        const exampleContainer = fallacyExample.parentElement;
-        if (fallacy.example) {
-          exampleContainer.style.display = 'block';
-          fallacyExample.textContent = fallacy.example;
-        } else {
-          exampleContainer.style.display = 'none';
-        }
-      }
-      
-      // Update the "Learn More" link
-      const learnMoreLink = document.querySelector('.fallacy-card-content .btn');
-      if (learnMoreLink) {
-        learnMoreLink.href = `fallacy-${fallacy.id}.html`;
-      }
-      
-      // Update the illustration (in a real app, you might have different images for each fallacy)
-      const illustration = document.querySelector('.fallacy-card-illustration');
-      if (illustration) {
-        // You could set different images based on the fallacy ID
-        // illustration.style.backgroundImage = `url('path/to/${fallacy.id}-image.jpg')`;
-      }
-    }
-
-    // Display a random fun fact in the footer
-    function displayRandomFact() {
-      if (!didYouKnowContainer) return;
-      
-      const funFacts = [
-        "The term 'straw man' comes from the idea of setting up a straw man that's easy to knock down, similar to misrepresenting someone's argument to make it easier to attack.",
-        "Ad hominem is Latin for 'to the person' and has been used as a logical fallacy since at least the 16th century.",
-        "The 'bandwagon fallacy' gets its name from the phrase 'jump on the bandwagon,' which originated in 19th-century American politics.",
-        "The 'red herring' fallacy is named after the practice of using strong-smelling fish to throw hunting dogs off a trail.",
-        "The 'appeal to authority' was first described by Aristotle in his work 'Rhetoric' over 2,300 years ago.",
-        "The 'false dilemma' is also known as the 'either/or' or 'black and white' fallacy.",
-        "The 'slippery slope' argument is only fallacious when the predicted outcome isn't necessarily likely to occur.",
-        "The 'hasty generalization' is sometimes called 'jumping to conclusions' or 'insufficient sample' fallacy.",
-        "The 'post hoc' fallacy gets its name from the Latin phrase 'post hoc, ergo propter hoc,' meaning 'after this, therefore because of this.'",
-        "The 'begging the question' fallacy is also known as 'circular reasoning' or 'petitio principii' in Latin."
-      ];
-      
-      const randomIndex = Math.floor(Math.random() * funFacts.length);
-      const fact = funFacts[randomIndex];
-      
-      const html = `
-        <div class="fact-content">
-          <strong>Did you know?</strong> ${fact}
-        </div>
-      `;
-      
-      didYouKnowContainer.innerHTML = html;
-      
-      // Change fact every 10 seconds
-      setInterval(() => {
-        displayRandomFact();
-      }, 10000);
-    }
-
     // Setup scroll animations
     function setupScrollAnimations() {
       const animateOnScroll = () => {
         const elements = document.querySelectorAll('.animate-on-scroll');
-        
+
         elements.forEach(element => {
           const elementTop = element.getBoundingClientRect().top;
           const windowHeight = window.innerHeight;
-          
+
           if (elementTop < windowHeight - 100) {
             element.classList.add('visible');
           }
         });
       };
-      
+
       // Initial check
       animateOnScroll();
-      
+
       // Check on scroll
       window.addEventListener('scroll', animateOnScroll);
     }
+
+    // Initialize everything on DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+      setupScrollAnimations();
+    });
   </script>
 </body>
 </html>
