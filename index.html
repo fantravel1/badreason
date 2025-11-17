@@ -429,13 +429,18 @@
   <nav class="navbar">
     <div class="container nav-content">
       <a href="index.html" class="logo">BadReason.com</a>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+        <i class="fas fa-bars"></i>
+      </button>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="fallacies.html">Fallacy Library</a></li>
+        <li><a href="game.html">Fallacy Detective</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </div>
   </nav>
+  <div class="nav-overlay"></div>
 
   <!-- Hero Section -->
   <header class="hero">
@@ -481,6 +486,15 @@
         <h3>Resist Manipulation</h3>
         <p>Recognize when others use flawed arguments to persuade or manipulate, and make decisions based on sound reasoning rather than rhetoric.</p>
         <a href="#" class="learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">
+          <i class="fas fa-gamepad"></i>
+        </div>
+        <h3>Practice with Games</h3>
+        <p>Test your critical thinking skills with our interactive Fallacy Detective game. Identify fallacies in real-world scenarios and build your streak!</p>
+        <a href="game.html" class="learn-more">Play now <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </section>
@@ -595,6 +609,37 @@
       setupMobileMenu();
       setupScrollAnimations();
     });
+
+    // Setup mobile menu functionality
+    function setupMobileMenu() {
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      const navOverlay = document.querySelector('.nav-overlay');
+
+      if (!menuToggle) return;
+
+      const toggleMenu = () => {
+        navLinks.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if (icon) {
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
+        }
+      };
+
+      menuToggle.addEventListener('click', toggleMenu);
+      navOverlay.addEventListener('click', toggleMenu);
+
+      // Close menu when clicking a link
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (navLinks.classList.contains('active')) {
+            toggleMenu();
+          }
+        });
+      });
+    }
 
     // Display a random fallacy as Fallacy of the Day
     function displayFallacyOfTheDay() {
